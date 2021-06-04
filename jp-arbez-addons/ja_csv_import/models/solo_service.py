@@ -14,6 +14,7 @@ class SoloServiceBase:
         self.url = '%s/jsonrpc' % self.HOST
         self.session_id = random.randint(0, 1000000000)
         self.uid = self.send_request('common', 'login', self.DB, self.USER, self.PASS)
+        print("Server remote: host: {}, db: {}, user: {}".format(self.HOST, self.DB, self.USER))
 
     def send_request(self, service, method, *args):
         json_structur = {

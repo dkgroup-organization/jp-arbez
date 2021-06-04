@@ -35,7 +35,7 @@ class SoloService(SoloServiceBase):
         user_domain = [('name', 'like', "-[" + str(dict_row['Tiers numéro']) + "]")]
         user_id = self.create_or_edit('res.partner', user_val, user_domain)
         # Livraison ===============================================================
-        if dict_row['Livraison intitulé'] and dict_row['Livraison numéro']:
+        if dict_row.get('Livraison intitulé') and dict_row.get('Livraison numéro'):
             country_livraison_id = False
             if dict_row['Livraison pays']:
                 country_livraison_value = {
@@ -69,15 +69,15 @@ class SoloService(SoloServiceBase):
 
 
 # Service = SoloService()
-Service = SoloService(
-    host='https://dkgroup-organization-jp-arbez.odoo.com',
-    db='dkgroup-organization-jp-arbez-master-2638135',
-    user='admin',
-    password='admin'
-)
-print(os.path.dirname(os.path.realpath(__file__)))
-print(os.path.realpath(__file__))
-Service.import_data('{}/../static/temp/vig_ - Clients adresses livraisons.csv'.format(os.path.dirname(os.path.realpath(__file__))))
+# Service = SoloService(
+#     host='https://dkgroup-organization-jp-arbez.odoo.com',
+#     db='dkgroup-organization-jp-arbez-master-2638135',
+#     user='admin',
+#     password='admin'
+# )
+# print(os.path.dirname(os.path.realpath(__file__)))
+# print(os.path.realpath(__file__))
+# Service.import_data('{}/../static/temp/vig_ - Clients adresses livraisons.csv'.format(os.path.dirname(os.path.realpath(__file__))))
 # Service.import_data('{}/../static/temp/vig_ - Tiers clients fournisseurs.csv'.format(os.path.dirname(os.path.realpath(__file__))))
 
 
