@@ -10,9 +10,12 @@ Service = SoloService()
 #     user='admin',
 #     password='admin'
 # )
-print(os.path.dirname(os.path.realpath(__file__)))
-print(os.path.realpath(__file__))
-# Service.import_data('{}/../static/temp/vig_ - Clients adresses livraisons.csv'.format(os.path.dirname(os.path.realpath(__file__))))
+# print(os.path.dirname(os.path.realpath(__file__)))
+# print(os.path.realpath(__file__))
 Service.import_data('{}/../static/temp/vig_ - Tiers clients fournisseurs.csv'.format(os.path.dirname(os.path.realpath(__file__))))
+Service.import_data('{}/../static/temp/vig_ - Clients adresses livraisons.csv'.format(os.path.dirname(os.path.realpath(__file__))))
+# [('name', '=ilike', 'BELGIQUE')]
+# [('name', '=ilike', 'CHILI')]
+# print(Service.get_source_translate('BELGIQUE', 'res.country,name'))
 
 
