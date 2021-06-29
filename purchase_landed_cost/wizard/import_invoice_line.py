@@ -14,8 +14,8 @@ class ImportInvoiceLine(models.TransientModel):
         comodel_name="account.move",
         string="Invoice",
         required=True,
-        domain="[('partner_id', '=', supplier), ('type', '=', 'in_invoice'),"
-        "('state', '=', 'posted')]",
+    #    domain="[('partner_id', '=', supplier), ('type', '=', 'in_invoice'),"
+     #   "('state', '=', 'posted')]",
     )
     invoice_line = fields.Many2one(
         comodel_name="account.move.line",
