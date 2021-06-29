@@ -555,8 +555,8 @@ class PurchaseCostDistributionExpense(models.Model):
     invoice_line = fields.Many2one(
         comodel_name="account.move.line",
         string="Supplier invoice line",
-        domain="[('invoice_id.type', '=', 'in_invoice'),"
-        "('invoice_id.state', '=', 'posted')]",
+    #    domain="[('invoice_id.type', '=', 'in_invoice'),"
+     #   "('invoice_id.state', '=', 'posted')]",
     )
     invoice_id = fields.Many2one(comodel_name="account.move", string="Invoice")
     display_name = fields.Char(compute="_compute_display_name", store=True)
