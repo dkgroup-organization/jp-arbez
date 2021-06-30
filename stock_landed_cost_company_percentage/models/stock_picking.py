@@ -58,7 +58,7 @@ class StockPicking(models.Model):
                     landed_cost.button_validate()
         return True
 
-    @api.multi
+
     def action_done(self):
         res = super(StockPicking, self).action_done()
         self._create_landed_cost()
