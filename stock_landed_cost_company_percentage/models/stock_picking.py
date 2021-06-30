@@ -19,7 +19,7 @@ class StockPicking(models.Model):
             )
             values = {
                 'product_id': product.id,
-                'split_method': product.split_method,
+                'split_method': product.split_method_landed_cost,
                 'account_id': account,
                 'price_unit': float((amount or 0.0) * line.percentage) / 100.0,
                 'name': product.name,
