@@ -59,7 +59,7 @@ class StockPicking(models.Model):
         return True
 
 
-    def action_done(self):
-        res = super(StockPicking, self).action_done()
+    def button_validate(self):
+        res = super(StockPicking, self).button_validate()
         self._create_landed_cost()
         return res
