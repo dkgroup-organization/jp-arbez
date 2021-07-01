@@ -9,7 +9,6 @@ class ProductTemplateInherit(models.Model):
     _inherit = "product.template"
     barcode = fields.Char(compute="_compute_barcode")
     
-    @api.one
     def _compute_barcode(self):
         for template in self:
             template.barcode = default_code
