@@ -12,4 +12,4 @@ class ProductTemplateInherit(models.Model):
     
     def _compute_barcode(self):
         for template in self:
-            template.barcode = default_code
+            template.barcode = template.default_code
